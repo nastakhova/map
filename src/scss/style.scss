@@ -1,0 +1,36 @@
+@import "partials/reset";
+@import "partials/fonts";
+@import "partials/variable";
+@import "partials/_icomoon.scss";
+@import "partials/_include-media.scss";
+
+
+@import "partials/_header";
+@import "partials/_footer";
+
+
+body {
+	font: #{map-get($font-size, base-size)}/1.5 Arial, sans-serif;
+
+	@include media('>tablet') {
+		font: #{map-get($font-size, mobile-size)}/1.5 Arial, sans-serif;
+	}
+}
+
+
+$grid-column: 4;
+$grid-gap: 10px;
+$container-width: 1200px;
+
+
+@for $item from 1 through $grid-column {
+	.grid-#{$item} {
+		width: $container-width/$item;
+		@if $item != 1 {
+			padding: 0 $grid-gap;
+		}
+
+
+	}
+}
+

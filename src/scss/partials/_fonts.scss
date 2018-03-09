@@ -1,0 +1,47 @@
+
+@each $font, $url, $font-weight, $font-style in 
+        ('cd', '../fonts/caviar_dreams_bold-webfont', bold, normal), 
+        ('cd', '../fonts/caviar_dreams_regular-webfont', normal, normal), 
+        ('cd', '../fonts/caviar_dreams_italic-webfont', normal, italic), 
+        ('cd', '../fonts/caviar_dreams_bold-italic-webfont' ,bold, italic),
+        ('icomoon', '../fonts/icomoon' ,normal, normal) {
+
+            @font-face {
+                font-family: #{$font};
+                src: url('#{$url}.eot');
+                src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
+                     url('#{$url}.woff2') format('woff2'),
+                     url('#{$url}.woff') format('woff'),
+                     url('#{$url}.ttf') format('truetype'),
+                     url('#{$url}.svg##{$font}') format('svg');
+                font-weight: $font-weight;
+                font-style: $font-style;
+            }
+}
+
+
+
+// $fonts: (
+//     ('cd', '../fonts/caviar_dreams_bold-webfont', bold, normal), 
+//     ('cd', '../fonts/caviar_dreams_regular-webfont', normal, normal), 
+//     ('cd', '../fonts/caviar_dreams_italic-webfont', normal, italic), 
+//     ('cd', '../fonts/caviar_dreams_bold-italic-webfont' ,bold, italic),
+//     ('icomoon', '../fonts/icomoon' ,normal, normal)
+
+// );
+
+// @each $font, $url, $font-weight, $font-style in $fonts{
+
+//             @font-face {
+//                 font-family: #{$font};
+//                 src: url('#{$url}.eot');
+//                 src: url('#{$url}.eot?#iefix') format('embedded-opentype'),
+//                      url('#{$url}.woff2') format('woff2'),
+//                      url('#{$url}.woff') format('woff'),
+//                      url('#{$url}.ttf') format('truetype'),
+//                      url('#{$url}.svg##{$font}') format('svg');
+//                 font-weight: $font-weight;
+//                 font-style: $font-style;
+//             }
+// }
+
